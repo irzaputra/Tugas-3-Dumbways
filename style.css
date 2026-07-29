@@ -1,0 +1,230 @@
+:root {
+    --hal: #F3EFE3;
+    --atur: #D6CBA9;
+    --ink: #1F2B3D;
+    --ink-duo: #4A5568;
+    --mas: #A9791F;
+    --mas-duo: #8A611A;
+    --warn: #8A3A2B;
+    --warn-bg: #F4E2D8;
+}
+
+* {box-sizing: border-box;}
+
+body{
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+    background: var(--ink);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.buku {
+    width: 100%;
+    max-width: 620px;
+    background: var(--hal);
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    padding: 0 0 8px;
+}
+
+.buku::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 46px;
+    background: repeating-linear-gradient(
+    to bottom,
+    var(--ink) 0px,
+    var(--ink) 3px,
+    transparent 3px,
+    transparent 26px
+    );
+    opacity: 0.9;
+}
+
+.buku-inner {
+    margin-left: 46px;
+    padding: 36px 34px 40px;
+    background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 37px,
+    var(--atur) 38px
+  );
+}
+
+.makthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 3px double var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 6px;
+}
+
+.makthead h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 26px;
+    font-style: italic;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.makthead .tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--ink-duo);
+}
+
+.row-balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0 30px;
+}
+
+.row-balance .label {
+    font-size: 13px;
+    color: var(--ink-duo);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.row-balance .value {
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--mas-duo);
+    border-bottom: 2px solid var(--mas-duo);
+    padding-bottom: 2px;
+}
+
+form {
+    margin-bottom: 8px;
+}
+
+.field-line {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.field-line label {
+    flex: 0 0 130px;
+    font-size: 13px;
+    color: var(--ink-duo);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.field-line input {
+    flex: 1;
+    border: none;
+    border-bottom: 1.5px solid var(--ink);
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 2px 4px;
+    color: var(--ink);
+    outline: none;
+}
+
+.field-line input::placeholder {
+    color: #9A917A;
+    font-style: italic;
+}
+
+.field-line input.input-error {
+    border-bottom-color: var(--warn);
+}
+
+#pesanError {
+    font-size: 13px;
+    color: var(--warn);
+    background: var(--warn-bg);
+    padding: 8px 12px;
+    margin: -8px 0 18px;
+    display: none;
+}
+
+#pesanError.show {display: block;}
+
+button.btn-add {
+    font-family: 'Courier New',monospace;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    background: var(--mas);
+    color: #FFF9EC;
+    border: none;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+button.btn-add:hover {
+    background: var(--mas-duo);
+}
+
+.list-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 34px 0 4px;
+}
+
+.list-heading .judul {
+    font-family: Georgia,serif;
+    font-style: italic;
+    font-size: 17px;
+}
+
+.list-heading .hitung {
+    font-size: 11px;
+    color: var(--ink-duo);
+    letter-spacing: 1px;
+}
+
+#listFormulir {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-pengeluaran {
+    display: flex;
+    align-items: baseline;
+    padding: 10px 0 8px;
+    gap: 8px;
+}
+
+.item-pengeluaran .name {
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.item-pengeluaran .lead {
+    flex: 1;
+    border-bottom: 1px dotted #A89D80;
+    margin-bottom: 4px;
+}
+
+.item-pengeluaran .total {
+    font-family: 'Courier New',monospace;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.empty-state {
+    padding: 20px 0;
+    color: var(--ink-duo);
+    font-style: italic;
+    font-size: 14px;
+}

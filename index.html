@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Pengeluaran Anak Kost</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="buku">
+        <div class="buku-inner">
+            <div class="makthead">
+                <h1>Buku Sendiri</h1>
+                <div class="tag">Catatan</div>
+            </div>
+            <div class="row-balance">
+                <span class="label">Jumlah Kepake</span>
+                <span class="value" id="total">Rp 0</span>
+            </div>
+            <form id="formPengeluaran">
+                <div class="field-line">
+                    <label for="namaPengeluaran">Keterangan</label>
+                    <input type="text" id="namaPengeluaran" placeholder="Contoh: Nasi Padang" />
+                </div>
+                <div class="field-line">
+                    <label for="jumlahPengeluaran">Jumlah (Rp) </label>
+                    <input type="number" id="jumlahPengeluaran" placeholder="Contoh: 30000" />
+                </div>
+                <div id="pesanError"></div>
+                <button type="submit" class="btn-add">Catat</button>
+            </form>
+            <div class="list-heading">
+                <span class="judul">Rincian</span>
+                <span class="hitung" id="itemCount">0 entri </span>
+            </div>
+            <div id="listFormulir"></div>
+        </div>
+    </div>
+    <script src="skrip.js"></script>
+</body>
+</html>
