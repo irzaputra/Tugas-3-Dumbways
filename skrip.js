@@ -84,13 +84,13 @@ form.addEventListener('submit', function (e){
     const total = totalInput.value.trim();
     if (!ValidInput(name,total)){
         pesanError.textContent = 'Keterangan dan jumlah wajib diisi dengan benar. ';
-        pesanError.classList.add('show');
+        pesanError.classList.remove('d-none');
         namaInput.classList.toggle('input-error', name === '');
         totalInput.classList.toggle('input-error', total === '' || isNaN(total));
         return;
     }
     pesanError.textContent= '';
-    pesanError.classList.remove('show');
+    pesanError.classList.add('d-none');
     namaInput.classList.remove('input-error');
     totalInput.classList.remove('input-error');
 

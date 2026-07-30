@@ -110,39 +110,40 @@ form {
     margin-bottom: 8px;
 }
 
-.field-line {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 22px;
-}
-
-.field-line label {
+.field-line .form-label {
     flex: 0 0 130px;
     font-size: 13px;
     color: var(--ink-duo);
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 0;
 }
 
-.field-line input {
+.field-line form-control {
     flex: 1;
     border: none;
     border-bottom: 1.5px solid var(--ink);
+    border-radius: 0;
     background: transparent;
     font-family: inherit;
     font-size: 16px;
     padding: 2px 4px;
     color: var(--ink);
     outline: none;
+    box-shadow: none;
 }
 
-.field-line input::placeholder {
+.field-line .form-control:focus {
+    border-bottom-color: var(--mas);
+    box-shadow: none;
+}
+
+.field-line .form-control:focus::placeholder {
     color: #9A917A;
     font-style: italic;
 }
 
-.field-line input.input-error {
+.field-line .form-control.input-error {
     border-bottom-color: var(--warn);
 }
 
@@ -150,9 +151,7 @@ form {
     font-size: 13px;
     color: var(--warn);
     background: var(--warn-bg);
-    padding: 8px 12px;
-    margin: -8px 0 18px;
-    display: none;
+    border-color: var(--warn);
 }
 
 #pesanError.show {display: block;}
@@ -165,13 +164,16 @@ button.btn-add {
     background: var(--mas);
     color: #FFF9EC;
     border: none;
+    border-radius: 0;
     padding: 10px 24px;
     cursor: pointer;
     transition: background 0.15s ease;
+    box-shadow: none;
 }
 
 button.btn-add:hover {
     background: var(--mas-duo);
+    color: #FFF9EC;
 }
 
 .list-heading {
